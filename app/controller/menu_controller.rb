@@ -137,8 +137,8 @@ require_relative "../../model/address_book"
 
 
    def entry_n
-    print "Entry number to view: "
-    selection = gets.chomp.to_i
+    print "Entry number to view [1-#{@address_book.entries.count}]: "
+    selection = gets.chomp.to_i - 1
 
     if selection < @address_book.entries.count
       puts @address_book.entries[selection]
